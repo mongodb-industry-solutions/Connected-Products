@@ -132,10 +132,11 @@ class RealmApp {
     } else {
       if (changes.changedProperties == "commands") {
         vehicle.commands?.forEach(async (command) => {
-          if (command.status == "submitted") {
+          if (command.status == "Received") {
             console.log(JSON.stringify(command));
             await this.self.realm.write(() => {
               command.status = "inProgress";
+              console.log(JSON.stringify(command));
             });
             await setTimeout(5000).then(() => {
               this.resetBattery();
