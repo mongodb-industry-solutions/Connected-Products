@@ -1,7 +1,7 @@
 import { ObjectID } from 'bson';
 
 // Provide the Realm App ID
-export const appID = "connected-products-kknex"; 
+export const appID = "connected-products-kknex" ; 
 export const baseUrl = "http://localhost:80";
 
 // Provide the configured customer profile

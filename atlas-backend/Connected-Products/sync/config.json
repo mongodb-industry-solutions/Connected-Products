@@ -20,8 +20,5 @@
     "queryable_fields_names": [
         "vin",
         "device_id"
-    ],
-    "asymmetric_tables": [
-        "Sensor"
     ]
 }
