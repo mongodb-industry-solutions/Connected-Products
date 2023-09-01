@@ -11,7 +11,13 @@ import RealmSwift
 // SwiftUI App Lifecycle
 // MongoDB Sample Code: https://www.mongodb.com/docs/realm/sdk/swift/swiftui-tutorial/#complete-code
 
-let app: RealmSwift.App? = RealmSwift.App(id: Bundle.main.object(forInfoDictionaryKey:"Atlas_App_ID") as! String)
+
+//let app: RealmSwift.App? = RealmSwift.App(id: Bundle.main.object(forInfoDictionaryKey:"Atlas_App_ID") as! String);
+
+let app: RealmSwift.App? = App(id: Bundle.main.object(forInfoDictionaryKey:"Atlas_App_ID") as! String, configuration: AppConfiguration(baseURL: (Bundle.main.object(forInfoDictionaryKey:"Base_URL") as! String), transport: nil, localAppName: nil, localAppVersion: nil))
+
+
+
 
 
 @main
@@ -22,6 +28,7 @@ struct EasyApp: SwiftUI.App {
         WindowGroup {
             if let app = app {
                 ContentView(app: app)
+
             } else {
             }
         }
@@ -29,4 +36,5 @@ struct EasyApp: SwiftUI.App {
             //print(phase)
         }
     }
+  
 }
