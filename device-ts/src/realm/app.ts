@@ -44,6 +44,7 @@ class RealmApp {
       this.vehicle = new Vehicle(this.realm, vehicleInit);
     });
     this.vehicle.addListener(this.processCommands.bind(this));
+    // this.vehicle.addListener(this.processFactoryOrders.bind(this));
   }
 
   /**
@@ -145,11 +146,44 @@ class RealmApp {
                 console.log(JSON.stringify(command));
               });
             });
-          };
+          }
+          else if (command.command == "New Battery Order to Factory") {
+            await setTimeout(155000).then(() => {
+              // this.resetBattery();
+              this.self.realm.write(() => {
+                command.status = "completed";
+                console.log(JSON.stringify(command));
+              });
+            });
+          }
         });
       }
     }
   }
+
+  /**
+   * Process Factory Orders
+  //  */
+  // processFactoryOrders(vehicle: Vehicle, changes: any) {
+  //     if (changes.deleted) {
+  //       console.log(`Vehicle removed! ${changes}`);
+  //     } else {
+  //       if (changes.changedProperties == "commands") {
+  //         vehicle.commands?.forEach(async (command) => {
+  //           if (command.status == "In Progress") {
+  //             console.log(JSON.stringify(command));
+  //             await setTimeout(5000).then(() => {
+  //               // this.resetBattery();
+  //               this.self.realm.write(() => {
+  //                 command.status = "Completed";
+  //                 console.log(JSON.stringify(command));
+  //               });
+  //             });
+  //           };
+  //         });
+  //       }
+  //     }
+  //   }
 
   // Set the battery status back to ok
   resetBattery() {

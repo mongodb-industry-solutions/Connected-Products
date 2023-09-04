@@ -12,8 +12,13 @@ import RealmSwift
 struct VehicleDetailView: View {
     @ObservedRealmObject var vehicle: Vehicle
     @State private var showingCommandView = false
+    @State private var sheetDismissed = false
+
+    
     
     var body: some View {
+        
+        
         NavigationView {
             Form {
                 Section(header: Text("Attributes")) {
@@ -71,11 +76,22 @@ struct VehicleDetailView: View {
                             Image(systemName: "exclamationmark.triangle.fill")
                                 .foregroundColor(.red)
                                 .imageScale(.large)
+
                         } else {
                             Image(systemName: "checkmark.circle.fill")
                                 .foregroundColor(.green)
                                 .imageScale(.large)
                         }
+                    }
+                    HStack {
+                        Text("Back-up Battery")
+                        Spacer()
+                        if (vehicle.battery?.status == "NOK") {
+                            Text("In Progress")
+                       } else {
+                           Text("Ready")
+                       }
+                        
                     }
                 }
                 Section(header: Text("Commands: \(vehicle.commands.count)")) {
@@ -85,7 +101,9 @@ struct VehicleDetailView: View {
                                 Text(cmd.command ?? "")
                                 Spacer()
                                 Text(cmd.status?.rawValue ?? "")
+
                             }
+                            
                         }
                     }
                 }
@@ -103,8 +121,12 @@ struct VehicleDetailView: View {
                 }
             }
         }
+
         .navigationBarTitle(vehicle.name)
-        .sheet(isPresented: $showingCommandView) {
+        .sheet(isPresented: $showingCommandView, onDismiss: {
+            // This closure is called when the sheet is dismissed
+            sheetDismissed = true
+        }) {
             CommandView(vehicle: vehicle, isPresented: $showingCommandView)
         }
     }
@@ -128,14 +150,17 @@ struct CommandView: View {
                 }
             }
             HStack() {
-                Button("Send", action: sendCommand)
+                Button("Send", action:sendCommand)
             }
         }
     }
     
+    
     func sendCommand(){
         $vehicle.commands.append(Command(value: ["command": selectedCommand, "status": CmdStatus.submitted]))
         isPresented = false
+        
+        
     }
 }
 

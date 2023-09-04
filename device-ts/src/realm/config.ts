@@ -1,7 +1,7 @@
 import { ObjectID } from 'bson';
 
 // Provide the Realm App ID
-export const appID = "<--YOUR APP SERVICES ID-->" 
+export const appID = "connected-products-kknex" 
 
 // Provide the configured customer profile
 export const realmUser = {
