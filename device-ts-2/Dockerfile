@@ -14,7 +14,7 @@ RUN npm install
 RUN npm run build
 
 # Expose port for webui
-EXPOSE 3000
+EXPOSE 3001
 
 # Start server
 CMD [ "node", "build/server.js"]

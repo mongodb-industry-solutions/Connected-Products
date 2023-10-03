@@ -12,12 +12,14 @@ struct VehiclesView: View {
     // This view opens a synced realm.
     // We've injected a `flexibleSyncConfiguration` as an environment value,
     // so `@AsyncOpen` here opens a realm using that configuration.
-    @AsyncOpen(appId: Bundle.main.object(forInfoDictionaryKey:"Atlas_App_ID") as? String, timeout: 4000) var asyncOpen
-    
+    @AsyncOpen(appId: nil,
+               timeout: 4000 ) var asyncOpen
+
     var body: some View {
         // Because we are setting the `ownerId` to the `user.id`, we need
         // access to the app's current user in this view.
         //let user = app?.currentUser
+        
         switch asyncOpen {
             // Starting the Realm.asyncOpen process.
             // Show a progress view.
