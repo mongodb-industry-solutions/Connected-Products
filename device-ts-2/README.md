@@ -11,7 +11,7 @@ Install [Node.js](https://nodejs.org/)
 3. `npm install`
 4. `npm run build`
 6. `npm start`
-7. Open web console http://localhost:3000
+7. Open web console http://localhost:3001
 
 ## Build and run "Device Simulator" locally in a container
 

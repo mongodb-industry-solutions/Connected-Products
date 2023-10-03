@@ -14,7 +14,7 @@ import RealmSwift
 
 //let app: RealmSwift.App? = RealmSwift.App(id: Bundle.main.object(forInfoDictionaryKey:"Atlas_App_ID") as! String);
 
-let app: RealmSwift.App? = App(id: Bundle.main.object(forInfoDictionaryKey:"Atlas_App_ID") as! String, configuration: AppConfiguration(baseURL: (Bundle.main.object(forInfoDictionaryKey:"Base_URL") as! String), transport: nil, localAppName: nil, localAppVersion: nil))
+let app: RealmSwift.App? = App(id: Bundle.main.object(forInfoDictionaryKey:"Atlas_App_ID") as! String, configuration: AppConfiguration(baseURL: "http://localhost:80", transport: nil, localAppName: nil, localAppVersion: nil))
 
 
 
