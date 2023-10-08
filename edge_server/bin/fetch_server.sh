@@ -27,7 +27,7 @@ if [ "$#" -gt 0 ] && [[ "$1" =~ ^https?://[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}(\/.*)?$ ]
         # also delete the build directory to rewrite it with new assets after upgrade
         rm -rf bin/* build
         # Move and overwrite everything from the new edge_server/ dir to current dir
-        mv edge_server/* .
+        mv edge_server/* edge_server/.env .
         # Cleanup
         rm -rf edge_server.tgz edge_server
        # TODO: run the upgrade. This will be used for major upgrades and will call

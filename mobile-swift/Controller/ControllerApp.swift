@@ -14,13 +14,17 @@ import RealmSwift
 
 //let app: RealmSwift.App? = RealmSwift.App(id: Bundle.main.object(forInfoDictionaryKey:"Atlas_App_ID") as! String);
 
-let app: RealmSwift.App? = App(id: Bundle.main.object(forInfoDictionaryKey:"Atlas_App_ID") as! String, configuration: AppConfiguration(baseURL: "http://localhost:80", transport: nil, localAppName: nil, localAppVersion: nil))
+let app: RealmSwift.App? = App(id: Bundle.main.object(forInfoDictionaryKey:"Atlas_App_ID") as! String, configuration: AppConfiguration(baseURL: "http://localhost:80", transport: nil, localAppName: nil, localAppVersion: nil));
 
-
+//let app2: RealmSwift.App? = RealmSwift.App(id: Bundle.main.object(forInfoDictionaryKey:"Atlas_App_ID") as! String);
 
 
 
 @main
+
+// if/else to check internet connectivity. Push app1 or app2 based on outcome:
+// https://stackoverflow.com/questions/30743408/check-for-internet-connection-with-swift
+
 struct EasyApp: SwiftUI.App {
     @Environment(\.scenePhase) private var scenePhase
     

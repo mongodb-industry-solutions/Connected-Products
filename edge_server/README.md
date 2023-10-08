@@ -1,4 +1,4 @@
-Version: 0.7.1
+Version: 0.8.0
 # Getting Started with Atlas Device Sync: Edge Server
 
 ## Background
@@ -46,6 +46,7 @@ The edge server allows wireprotocol connections where reads and writes are synch
 The wireprotocol server is on by default and can be connected to via the host machine (`EDGE_SERVER_HOSTNAME`) on port `27021` using the MongoDB URI `mongodb://EDGE_SERVER_HOSTNAME:27021`.
 
 ### Supported commands
+- insert, insertOne, insertMany
 - find, findOne
 - update, updateOne, updateMany (upserts are not supported)
 - deleteOne, deleteMany

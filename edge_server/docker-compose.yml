@@ -26,10 +26,8 @@ services:
         })'
 
   sync_server:
-    image: quay.io/mongodb/tiered-sync-server:3a338e3155b92a1bf95ee4982542603ed0007e8d
-    # quay.io/mongodb/tiered-sync-server:ecacaafc52b678f3adc7ad70f6188bdb88ab968c
-    # linux/amd image: quay.io/mongodb/tiered-sync-server:3a338e3155b92a1bf95ee4982542603ed0007e8d
-    # platform: linux/arm64/v8
+    image: quay.io/mongodb/tiered-sync-server:b3581ebe0b1cdd8e1fb89fdc26ab23c125f37735
+    # platform: linux/amd64
     depends_on:
       - mongodb_container
       - replSetInit
