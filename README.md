@@ -18,6 +18,35 @@ Code samples and demos around using the Realm database in combination with Mongo
 [Setup iOS Mobile Application](https://github.com/mongodb-industry-solutions/connected-devices/tree/main/mobile-swift)
 
 
+## Edge Server Setup
+
+To install and configure Edge Server, follow the instructions here: https://www.mongodb.com/docs/atlas/app-services/edge-server/configure/
+
+When Edge Server is installed, go to the edge_server repository and make sure the file `config.json` has the following structure:
+
+```
+{
+  "clientAppId": "<your APP ID>",
+  "query": {
+    "Vehicle": "truepredicate",
+    "Component":"truepredicate",
+    "Sensor":"truepredicate"  
+  },
+  "cloudSyncServerAuthSecret": <<YOUR_TOKEN>>,
+  "hostname": "localhost:80",
+  "tls" : {
+    "enabled": false,
+    "certificates": [
+      {
+        "publicKeyPath": "certs/cert.pem",
+        "privateKeyPath": "certs/certkey.pem"
+      }
+    ]
+  }
+}
+```
+
+
 ## AWS Sagemaker Integration (WIP)
 
 [Setup AWS Sagemaker Integration](https://github.com/mongodb-industry-solutions/connected-devices/tree/main/aws-sagemaker)
