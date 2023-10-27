@@ -13,10 +13,30 @@ body {
 #vin {
     width: 250px;
     margin-left: 39%;
-    margin-top: -20px;
+    margin-top: 25px;
     border-radius: 5px;
     border: 2px solid black;
     height: 35px;
+}
+
+#ECU_A {
+    background-color:  rgb(196, 196, 196);
+    /* margin-bottom: 120px; */
+    font-size: 25px;
+    margin-top: -170px;
+    margin-left: 200px;
+    width: 90px;
+    border-radius: 5px;
+}
+
+#ECU_B {
+    background-color: #00D2FF;
+    margin-bottom: 100px;
+    font-size: 25px;
+    margin-top: -10px;
+    margin-left: 200px;
+    width: 90px;
+    border-radius: 5px;
 }
 
 #engine_image {

@@ -120,15 +120,16 @@
 
         const content = `
           <div id="vehicle_section">
-              <h1>${device.name}</h1>
+              <h1>${device.name} - ECU B</h1>
               <hr class="my-4">
               <img id="vehicle_image" src="${vehicle_pic}" alt="Image of vehicle">
               <p id="voltage">Voltage: ${device.battery.voltage}</p>
               <p id="current">Current: ${device.battery.current}</p>
               <p id="ison">${engine_status_tag}</p>
-              <img id="engine_image" src="${engine_pic}" alt="Engine GIF" />
+           
               <p id="vin">VIN: ${device._id}</p>
-            
+              <p id="ECU_A">ECU A</p>
+              <p id="ECU_B">ECU B</p>
               <div class="alert_section">
                 <img id="alert_image" src="${alert_pic}" alt="Alert Icon" />
                 <h3 id="alert_tooltip">${alert_tooltip}</h3>
