@@ -21,7 +21,9 @@ Code samples and demos around using the Realm database in combination with Mongo
 ## Edge Server Setup
 
 To install and configure Edge Server, follow the instructions here: https://www.mongodb.com/docs/atlas/app-services/edge-server/configure/
+
 Since Edge Server is currently in private preview, you need to request an access Token. To request it, please visit: https://www.mongodb.com/products/platform/atlas-edge-server
+
 When Edge Server is installed, go to the `edge_server` folder and make sure the file `config.json` has the following structure:
 
 ```
