@@ -9,9 +9,13 @@ Code samples and demos around using the Realm database in combination with Mongo
 
 [Setup MongoDB Atlas Backend](https://github.com/mongodb-industry-solutions/connected-devices/tree/main/atlas-backend)
 
-## Typescript Vehicle Simulator
+## Setup Typescript Simulator for ECU A - device-ts
 
 [Setup Device Simulator](https://github.com/mongodb-industry-solutions/connected-devices/tree/main/device-ts)
+
+## Setup Typescript Simulator for ECU B - device-ts-2
+
+[Setup Device Simulator](https://github.com/mongodb-industry-solutions/connected-devices/tree/main/device-ts-2)
 
 ## iOS Swift Vehicle Controller Mobile App
 
