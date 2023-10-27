@@ -15,12 +15,9 @@ This folder contains all the MongoDB Atlas backend configuration files.
 4. Update your AWS Account ID in `./Connected-Products/triggers/eventbridge_publish_battery_telemetry.json`
 4. Import the Connected-Products application `realm-cli push --local ./Connected-Products --remote Connected-Products` and configure the [options](https://www.mongodb.com/docs/atlas/app-services/manage-apps/create/create-with-cli/#run-the-app-creation-command) according your needs
 5. Copy the returned App ID and use it to create the demo user: `realm-cli users create --type email --email demo --password demopw`
-6. Copy the App ID `realm-cli apps list` and continue with configuring / running the vehicle simulator ["device-ts"](https://github.com/mongodb-industry-solutions/Connected-Devices/tree/main/device-ts).
+6. Copy the App ID `realm-cli apps list` and continue with configuring / running the vehicle simulator ["device-ts"](https://github.com/mongodb-industry-solutions/Connected-Devices/tree/main/device-ts), and ["device-ts-2"](https://github.com/mongodb-industry-solutions/Connected-Devices/tree/main/device-ts-2).
+.
 
 
-//humza - put back into config.json
-,
-    "asymmetric_tables": [
-        "Sensor"
-    ]
+
 
