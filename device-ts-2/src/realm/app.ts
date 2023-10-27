@@ -1,5 +1,4 @@
 import { Vehicle, Battery, Command, Component, Sensor, Measurement } from './schemas';
-
 import { appID, baseUrl, realmUser, vehicleConfig } from './config';
 import { ObjectId } from 'bson';
 import { setTimeout } from "timers/promises";
@@ -17,7 +16,7 @@ class RealmApp {
   constructor() {
     //humza
     this.app = new Realm.App({ id: appID, baseUrl:baseUrl });
- //   this.app = new Realm.App({ id:appID });
+    //  this.app = new Realm.App({id:appID});
     console.log ("app opened successfully");
     this.self = this;
   }
@@ -27,11 +26,8 @@ class RealmApp {
    */
   async login() {
     console.log ("app is trying to log in");
-
     await this.app.logIn(Realm.Credentials.emailPassword(realmUser.username, realmUser.password));
-    //const credentials = Realm.Credentials.anonymous();
-    //await this.app.logIn(credentials);
-        console.log ("app logged in successfully");
+    console.log ("app logged in successfully");
 
     this.realm = await Realm.open({
       schema: [Vehicle, Battery, Command, Component, Sensor, Measurement],
@@ -40,25 +36,36 @@ class RealmApp {
         flexible: true
       }
     });
-    console.log ("realm is open");
+    console.log("realm is open");
 
     // Add flexible sync subscriptions
     const deviceID = `device_id = ${JSON.stringify(this.app.currentUser!.id)}`;
     this.realm.subscriptions.update(subscriptions => {
       subscriptions.add(this.realm!.objects('Vehicle').filtered(deviceID, { name: "device-filter" }));
       subscriptions.add(this.realm!.objects('Component').filtered(deviceID, { name: "component-filter" }));
+      subscriptions.add(this.realm!.objects('Sensor').filtered(deviceID, { name: "sensor-filter" }));
+
     });
-
-    console.log ("subscriptions are added");
-
+    console.log("subscriptions are added");
 
     // Create vehicle object on application start
+      //humza
+     // let vehicleInit = vehicleConfig;
+     // vehicleInit.device_id = this.app.currentUser!.id;
+     // this.vehicle = new Vehicle(this.realm, vehicleInit);
+     const veh = this.realm.objects('Vehicle').filtered(deviceID, { name: "device-filter" });
+     veh.forEach(v => {
+      console.log(v);
+      this.vehicle = v as Vehicle;
+     });
+    /*
     let vehicleInit = vehicleConfig;
     vehicleInit.device_id = this.app.currentUser!.id;
     this.realm.write(() => {
       this.vehicle = new Vehicle(this.realm, vehicleInit);
-    });
+    });*/
     this.vehicle.addListener(this.processCommands.bind(this));
+    
   }
 
   /**
@@ -166,7 +173,6 @@ class RealmApp {
     }
   }
 
-
   // Set the battery status back to ok
   resetBattery() {
     this.self.realm.write(() => {
@@ -177,6 +183,9 @@ class RealmApp {
   /**
    * Remove all change listeners,delete created devices/components
    */
+  // humza
+
+  /* 
   async cleanupRealm() {
     try {
       // Remove all change listener
@@ -190,7 +199,7 @@ class RealmApp {
     } catch (err) {
       console.error("Failed: ", err);
     }
-  }
+  }*/
 }
 
 export default RealmApp;

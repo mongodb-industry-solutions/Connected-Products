@@ -1,0 +1,91 @@
+{
+  "admin": {
+    "authSource": "local",
+    "baseUrl": "http://localhost:80",
+    "cors": {
+      "allowedOrigins": [
+        "https://account.mongodb.com",
+        "https://cloud.mongodb.com",
+        "https://realm.mongodb.com",
+        "https://stitch.mongodb.com"
+      ],
+      "enabled": true
+    },
+    "staticDir": "static"
+  },
+  "api": {
+    "baseUrl": "http://localhost:80",
+    "baseWSUrl": "ws://localhost:80",
+    "endpointBaseUrl": "http://localhost:80",
+    "listenAddresses": [
+      {
+        "hostname": "0.0.0.0",
+        "port": 80
+      }
+    ],
+    "webhookBaseUrl": "http://localhost:80"
+  },
+  "applog": {
+    "insertWorkers": 4,
+    "store": {
+      "urisByProviderRegion": {
+        "aws-us-east-1": "mongodb://mongodb_container:27017"
+      }
+    }
+  },
+  "dataStore": "mongodb",
+  "db": {
+    "mongoDBURIs": {
+      "GLOBAL": "mongodb://mongodb_container:27017",
+      "LOCAL": "mongodb://mongodb_container:27017"
+    }
+  },
+  "environmentDesc": "local",
+  "edge": {
+    "enabled": true,
+    "cloudSyncServerAuthSecret": "",
+    "query": {},
+    "clientAppId": ""
+  },
+  "products": [
+    {
+      "admin": {
+        "actionRoleMappings": {
+          "internal_read": [
+            "GLOBAL_READ_ONLY",
+            "GLOBAL_OWNER",
+            "GLOBAL_STITCH_ADMIN"
+          ],
+          "internal_write": ["GLOBAL_STITCH_ADMIN"],
+          "read": [
+            "GROUP_OWNER",
+            "GROUP_READ_ONLY",
+            "GLOBAL_OWNER",
+            "GLOBAL_READ_ONLY",
+            "GLOBAL_STITCH_ADMIN"
+          ],
+          "write": ["GROUP_OWNER", "GLOBAL_STITCH_ADMIN"],
+          "manage_release": ["GLOBAL_BAAS_FEATURE_ADMIN", "GLOBAL_STITCH_ADMIN"]
+        }
+      },
+      "default": true,
+      "inheritedFeatureFlags": ["mongodb_service"],
+      "name": "standard"
+    }
+  ],
+  "server": {
+    "region": "us-east-1",
+    "provider": "aws"
+  },
+  "sync": {
+    "enabled": true
+  },
+  "wireProtocolServer": {
+    "listenAddresses": [
+      {
+        "hostname": "0.0.0.0",
+        "port": 27021
+      }
+    ]
+  }
+}

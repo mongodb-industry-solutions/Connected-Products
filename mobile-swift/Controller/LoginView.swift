@@ -50,6 +50,7 @@ struct LoginView: View {
                     // Other views are observing the app and will detect
                     // that the currentUser has changed. Nothing more to do here.
                     print("Logged in")
+
                 }
             }.disabled(isLoggingIn)
         }

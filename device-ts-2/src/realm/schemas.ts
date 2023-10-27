@@ -27,7 +27,6 @@ export class Vehicle extends Realm.Object<Vehicle> {
       mixedTypes: 'mixed?',
       components: 'Component[]',
       battery: 'Battery?'
-
     }
   }
 }
@@ -102,7 +101,6 @@ export class Sensor extends Realm.Object<Component> {
   public sn?: string;
 
   public measurements!: Realm.List<Measurement>;
-
   //humza     asymmetric: true,
   static schema = {
     name: 'Sensor',

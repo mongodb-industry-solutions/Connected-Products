@@ -1,0 +1,46 @@
+version: '3.5'
+services:
+  mongodb_container:
+    image: mongo:5.0
+    volumes:
+      - mongodb_data_container:/data/db
+    command: "--replSet rs0"
+    restart: always
+
+  replSetInit:
+    image: mongo:5.0
+    restart: on-failure
+    depends_on:
+      - mongodb_container
+    links:
+      - mongodb_container
+    command:
+      - /bin/sh
+      - -c
+      - |
+        mongosh --host mongodb_container:27017 --eval 'rs.isMaster().ismaster || rs.initiate({
+          "_id": "rs0",
+          "members" : [
+            { "_id" : 0, "host" : "mongodb_container:27017" }
+          ]
+        })'
+
+  sync_server:
+    image: quay.io/mongodb/tiered-sync-server:b3581ebe0b1cdd8e1fb89fdc26ab23c125f37735
+    # platform: linux/amd64
+    depends_on:
+      - mongodb_container
+      - replSetInit
+    links:
+      - mongodb_container
+    volumes:
+      - ./build/edge_config.json:/apps/configs/edge_config.json
+    environment:
+      EDGE_CONFIG_FILE: /apps/configs/edge_config.json
+    ports:
+      - 80:80
+      - 27021:27021
+    restart: always
+
+volumes:
+  mongodb_data_container:
