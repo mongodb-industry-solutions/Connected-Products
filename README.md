@@ -1,7 +1,7 @@
-# MongoDB & AWS Connected Vehicle End to End Demo Repository
-Code samples and demos around using the Realm database in combination with MongoDB Atlas, Device Sync and AWS Sagemaker.
+# MongoDB Connected Vehicle End to End Demo Repository
+Code samples and demos around using the Realm database in combination with MongoDB Atlas, Edge Server, Device Sync and AWS Sagemaker.
 
-[Demo Video](https://youtu.be/8SztdPe6wJA)
+[Demo Video](https://www.youtube.com/watch?v=6qodPDPNoSg)
 
 ![image](media/Overview.png)
 
