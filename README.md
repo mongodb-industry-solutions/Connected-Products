@@ -3,7 +3,7 @@ Code samples and demos around using the Realm database in combination with Mongo
 
 [Demo Video](https://youtu.be/AlGeTg1RAUI)
 
-![image](media/Overview.png)
+![image](media/Overview-updated.png)
 
 ## MongoDB Atlas Backend Setup
 
