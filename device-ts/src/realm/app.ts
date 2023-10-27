@@ -1,4 +1,5 @@
 import { Vehicle, Battery, Command, Component, Sensor, Measurement } from './schemas';
+
 import { appID, baseUrl, realmUser, vehicleConfig } from './config';
 import { ObjectId } from 'bson';
 import { setTimeout } from "timers/promises";
@@ -164,6 +165,7 @@ class RealmApp {
       }
     }
   }
+
 
   // Set the battery status back to ok
   resetBattery() {

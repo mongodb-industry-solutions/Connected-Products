@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+
 		0AFB90A22AD32FFB00018E12 /* Reachability in Frameworks */ = {isa = PBXBuildFile; productRef = 0AFB90A12AD32FFB00018E12 /* Reachability */; };
+
 		630D2377282F058000EAD0C5 /* VehicleDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630D2376282F058000EAD0C5 /* VehicleDetailView.swift */; };
 		631657E22675F6B300D397C5 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631657E12675F6B300D397C5 /* LoginView.swift */; };
 		631657E42675F70B00D397C5 /* VehiclesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631657E32675F70B00D397C5 /* VehiclesView.swift */; };
@@ -40,7 +42,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				6389BC0928563F2C0014EFB7 /* RealmSwift in Frameworks */,
+
 				0AFB90A22AD32FFB00018E12 /* Reachability in Frameworks */,
+
 				6389BC0728563F2C0014EFB7 /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -116,7 +120,9 @@
 			packageProductDependencies = (
 				6389BC0628563F2C0014EFB7 /* Realm */,
 				6389BC0828563F2C0014EFB7 /* RealmSwift */,
+
 				0AFB90A12AD32FFB00018E12 /* Reachability */,
+
 			);
 			productName = Easy;
 			productReference = 63C9ABB8266948D200069D38 /* Controller.app */;
@@ -148,7 +154,9 @@
 			packageReferences = (
 				6301D04927E7540D008FFAFE /* XCRemoteSwiftPackageReference "realm-swift" */,
 				6389BC0528563F2C0014EFB7 /* XCRemoteSwiftPackageReference "realm-swift" */,
+
 				0AFB90A02AD32FFB00018E12 /* XCRemoteSwiftPackageReference "Reachability" */,
+
 			);
 			productRefGroup = 63C9ABB9266948D200069D38 /* Products */;
 			projectDirPath = "";
@@ -374,6 +382,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+
 		0AFB90A02AD32FFB00018E12 /* XCRemoteSwiftPackageReference "Reachability" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ashleymills/Reachability.swift";
@@ -382,6 +391,7 @@
 				kind = branch;
 			};
 		};
+
 		6301D04927E7540D008FFAFE /* XCRemoteSwiftPackageReference "realm-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-swift.git";
@@ -401,11 +411,13 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+
 		0AFB90A12AD32FFB00018E12 /* Reachability */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 0AFB90A02AD32FFB00018E12 /* XCRemoteSwiftPackageReference "Reachability" */;
 			productName = Reachability;
 		};
+
 		6389BC0628563F2C0014EFB7 /* Realm */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 6389BC0528563F2C0014EFB7 /* XCRemoteSwiftPackageReference "realm-swift" */;

@@ -20,10 +20,6 @@ let app: RealmSwift.App? = App(id: Bundle.main.object(forInfoDictionaryKey:"Atla
 
 
 
-@main
-
-// if/else to check internet connectivity. Push app1 or app2 based on outcome:
-// https://stackoverflow.com/questions/30743408/check-for-internet-connection-with-swift
 
 struct EasyApp: SwiftUI.App {
     @Environment(\.scenePhase) private var scenePhase
@@ -32,7 +28,6 @@ struct EasyApp: SwiftUI.App {
         WindowGroup {
             if let app = app {
                 ContentView(app: app)
-
             } else {
             }
         }
@@ -40,5 +35,4 @@ struct EasyApp: SwiftUI.App {
             //print(phase)
         }
     }
-  
 }

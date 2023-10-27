@@ -51,8 +51,6 @@ struct LoginView: View {
                     // that the currentUser has changed. Nothing more to do here.
                     print("Logged in")
 
-
-
                 }
             }.disabled(isLoggingIn)
         }

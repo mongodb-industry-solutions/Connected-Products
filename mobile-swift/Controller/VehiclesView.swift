@@ -15,11 +15,12 @@ struct VehiclesView: View {
     @AsyncOpen(appId: nil,
                timeout: 4000 ) var asyncOpen
 
+
     var body: some View {
         // Because we are setting the `ownerId` to the `user.id`, we need
         // access to the app's current user in this view.
         //let user = app?.currentUser
-        
+
         switch asyncOpen {
             // Starting the Realm.asyncOpen process.
             // Show a progress view.

@@ -10,6 +10,7 @@
       }
     },
     {
+
       "identity" : "realm-core",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/realm/realm-core",
@@ -25,6 +26,7 @@
       "state" : {
         "branch" : "master",
         "revision" : "16273bd3968468e0c947dfe8577975c34d8d4360"
+
       }
     }
   ],

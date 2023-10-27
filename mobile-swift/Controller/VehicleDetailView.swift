@@ -71,12 +71,14 @@ struct VehicleDetailView: View {
                             Image(systemName: "exclamationmark.triangle.fill")
                                 .foregroundColor(.red)
                                 .imageScale(.large)
+
                         } else {
                             Image(systemName: "checkmark.circle.fill")
                                 .foregroundColor(.green)
                                 .imageScale(.large)
                         }
                     }
+
                 }
                 Section(header: Text("Commands: \(vehicle.commands.count)")) {
                     List {
@@ -105,6 +107,7 @@ struct VehicleDetailView: View {
         }
         .navigationBarTitle(vehicle.name)
         .sheet(isPresented: $showingCommandView) {
+
             CommandView(vehicle: vehicle, isPresented: $showingCommandView)
         }
     }
@@ -129,6 +132,7 @@ struct CommandView: View {
             }
             HStack() {
                 Button("Send", action: sendCommand)
+
             }
         }
     }
@@ -136,6 +140,7 @@ struct CommandView: View {
     func sendCommand(){
         $vehicle.commands.append(Command(value: ["command": selectedCommand, "status": CmdStatus.submitted]))
         isPresented = false
+
     }
 }
 

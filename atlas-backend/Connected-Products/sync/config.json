@@ -20,5 +20,6 @@
     "queryable_fields_names": [
         "vin",
         "device_id"
+
     ]
 }

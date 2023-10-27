@@ -17,8 +17,10 @@ This folder contains all the MongoDB Atlas backend configuration files.
 5. Copy the returned App ID and use it to create the demo user: `realm-cli users create --type email --email demo --password demopw`
 6. Copy the App ID `realm-cli apps list` and continue with configuring / running the vehicle simulator ["device-ts"](https://github.com/mongodb-industry-solutions/Connected-Devices/tree/main/device-ts).
 
+
 //humza - put back into config.json
 ,
     "asymmetric_tables": [
         "Sensor"
     ]
+

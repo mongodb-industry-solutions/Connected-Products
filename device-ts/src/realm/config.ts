@@ -1,8 +1,10 @@
 import { ObjectID } from 'bson';
 
 // Provide the Realm App ID
-export const appID = "connected-products-kknex"; 
+
+export const appID = "YOUR-ATLAS-APP-ID-HERE"
 export const baseUrl = "http://localhost:80";
+
 
 // Provide the configured customer profile
 export const realmUser = {
@@ -22,3 +24,4 @@ export const vehicleConfig = {
     commands: [],
     battery: { sn: "123", capacity: 1000, voltage: 50, current: 50 }
   }
+
